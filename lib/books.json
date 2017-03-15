@@ -1,0 +1,107 @@
+[
+  {
+    "id": "4cf50d76-a4d6-42cc-954f-60f708a86d6b",
+    "title": "mobile",
+    "inventory": 25,
+    "price": 52.5,
+    "author": "Wanda"
+  },
+  {
+    "id": "4ea4097f-5de5-47b4-a7df-5eaf99e2b029",
+    "title": "pricing structure",
+    "inventory": 20,
+    "price": 58.2,
+    "author": "Jerry"
+  },
+  {
+    "id": "d30c6aff-605d-4796-a8a6-492c2e290cd1",
+    "title": "Upgradable",
+    "inventory": 4,
+    "price": 28.6,
+    "author": "Diana"
+  },
+  {
+    "id": "4f076ea2-7fbb-4bfc-9a67-e7046f4a641f",
+    "title": "Centralized",
+    "inventory": 5,
+    "price": 47.2,
+    "author": "Robert"
+  },
+  {
+    "id": "24875cfe-26e9-4c16-b2b5-046a2753e480",
+    "title": "project",
+    "inventory": 13,
+    "price": 5.21,
+    "author": "Justin"
+  },
+  {
+    "id": "67bdcb6c-37f7-473e-84ac-303c25df2b23",
+    "title": "attitude",
+    "inventory": 11,
+    "price": 66.2,
+    "author": "Elizabeth"
+  },
+  {
+    "id": "224fb8cf-7b83-41b8-876a-d445938912c5",
+    "title": "3rd generation",
+    "inventory": 4,
+    "price": 17.7,
+    "author": "Earl"
+  },
+  {
+    "id": "65f3473a-6ece-4ad7-b384-fbe0bbf1252e",
+    "title": "Multi-channelled",
+    "inventory": 1,
+    "price": 77.5,
+    "author": "Angela"
+  },
+  {
+    "id": "441288b8-f044-42cf-96e5-87387c59e8eb",
+    "title": "Synchronised",
+    "inventory": 19,
+    "price": 49.8,
+    "author": "Frank"
+  },
+  {
+    "id": "41ece680-7ef5-46ea-861e-51e42f9582b7",
+    "title": "Quality-focused",
+    "inventory": 11,
+    "price": 59.7,
+    "author": "Dennis"
+  },
+  {
+    "id": "7e15094c-2b09-44f1-9553-98ea80ae52d2",
+    "title": "function",
+    "inventory": 2,
+    "price": 28.4,
+    "author": "Joseph"
+  },
+  {
+    "id": "965c55c2-4b2d-4bdd-a14a-8577a23d6385",
+    "title": "Enterprise-wide",
+    "inventory": 5,
+    "price": 63.6,
+    "author": "Chris"
+  },
+  {
+    "id": "292cf00d-f298-4d53-969e-100f0bc46e26",
+    "title": "Optimized",
+    "inventory": 19,
+    "price": 11.9,
+    "author": "Jeffrey"
+  },
+  {
+    "id": "7273dbcc-d508-4566-b8a4-eccec281adcb",
+    "title": "user-facing",
+    "inventory": 11,
+    "price": 64.4,
+    "author": "Donna"
+  },
+  {
+    "id": "e3d557e7-b603-4d45-8063-e91b088bfeb5",
+    "title": "mobile",
+    "inventory": 20,
+    "price": 56.7,
+    "author": "Bruce"
+  }
+]
