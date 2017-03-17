@@ -14,14 +14,15 @@ var row = {
 
 const ProductItem = ({ product, onAddToCartClicked }) => (
   <Col lg={3} md={4} xs={12} sm={6} style={row}>
-    <img src={"http://lorempixel.com/200/200/business/" + getRandomNumber()} alt="product.title" />
+    <img src={product.image} alt="product.title" />
     <Product
       title={product.title}
-      price={product.price} />
+      price={product.price}
+      author={product.author} />
     <Button
       bsStyle='success'
       onClick={onAddToCartClicked}
-      disabled={product.inventory > 0 ? '' : 'disabled'}>
+      disabled={product.inventory > 0 ? false : true}>
       {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
     </Button>
   </Col>

@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { checkout } from '../redux/actions'
-import { getTotal, getCartProducts } from '../redux/reducers'
-import Cart from '../components/cart'
+import { addProduct } from '../redux/actions'
+import { getInventoryDefaults } from '../redux/reducers'
+
 import { connectWithStore } from '../redux/connectWithStore';
 import { store } from '../redux/store'
 import shop from '../lib/shop'
@@ -10,15 +10,11 @@ import * as types from '../redux/constants/ActionTypes'
 import Layout from '../components/layout';
 
 
-const CartContainer = ({ products, total, checkout }) => (
-  <Layout cartLength={products.length}>
+const AdminContainer = ({ product }) => (
+  <Layout>
     <div>
-      <Cart
-        products={products}
-        total={total}
-        />
-      <br />
-      <button onClick={() => checkout(products, 'asdfasdf')}
+      
+      <button onClick={() => addProduct(products, 'asdfasdf')}
         disabled={products.length ? '' : 'disabled'}>
         Checkout
       </button>
@@ -27,7 +23,7 @@ const CartContainer = ({ products, total, checkout }) => (
 
 )
 
-CartContainer.propTypes = {
+AdminContainer.propTypes = {
   products: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -39,17 +35,16 @@ CartContainer.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  products: getCartProducts(state),
-  total: getTotal(state),
-  checkout: checkout(state)
+  product: getInventoryDefaults(state),
+  
 })
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    checkout: (products, userId)=>{
-      dispatch(checkout(products, userId))
+    addProduct: (products, userId)=>{
+      dispatch(addProduct(products))
     }
   }
 };
 
-export default connectWithStore(store, CartContainer, mapStateToProps, mapDispatchToProps);
+export default connectWithStore(store, AdminContainer, mapStateToProps, mapDispatchToProps);

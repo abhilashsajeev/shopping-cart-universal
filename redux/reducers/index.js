@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux'
 import cart, * as fromCart from './cart'
 import products, * as fromProducts from './products'
-
+import orderHistory from './orderHistory';
+import inventory from './inventory';
 export default combineReducers({
   cart,
-  products
+  products,
+  orderHistory,
+  inventory
 })
 
 const getAddedIds = state => fromCart.getAddedIds(state.cart)
@@ -24,3 +27,5 @@ export const getCartProducts = state =>
     ...getProduct(state, id),
     quantity: getQuantity(state, id)
   }))
+  
+export const getInventoryDefaults = state => inventory.getInventoryDefaults;

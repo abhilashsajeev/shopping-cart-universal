@@ -29,8 +29,7 @@ class ProductListContainer extends React.Component {
     const onAddToCart = this.props.onAddToCart;
     const cartLength = this.props.cartLength
     return (
-      <Layout>
-        cart length = {cartLength}
+      <Layout cartLength={cartLength}>
         <div>
           {this.renderProudctList(products, onAddToCart)}
           <br />

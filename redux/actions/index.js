@@ -1,6 +1,15 @@
 import shop from '../../lib/shop'
 import * as types from '../constants/ActionTypes'
 
+const addProductToInventory = product => ({
+  type: types.ADD_PRODUCT_TO_INVENTORY,
+  product
+})
+
+export const addProduct = (product) => dispatch => {
+  dispatch(addProductToInventory(product))
+}
+
 const receiveProducts = products => ({
   type: types.RECEIVE_PRODUCTS,
   products: products
@@ -23,16 +32,17 @@ export const addToCart = productId => (dispatch, getState) => {
   }
 }
 
-export const checkout = products => (dispatch, getState) => {
+export const checkout = (products, userId) => (dispatch, getState) => {
+  
   const { cart } = getState()
-
+  console.log('calling get state');
   dispatch({
     type: types.CHECKOUT_REQUEST
   })
   shop.buyProducts(products, () => {
     dispatch({
       type: types.CHECKOUT_SUCCESS,
-      cart
+      order: {cart, userId}
     })
     // Replace the line above with line below to rollback on failure:
     // dispatch({ type: types.CHECKOUT_FAILURE, cart })

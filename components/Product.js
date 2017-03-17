@@ -1,10 +1,13 @@
 import React, { PropTypes } from 'react'
 
-const Product = ({ price, quantity, title }) => (
+const Product = ({ price, quantity, title, author }) => (
   <div>
     <span><b>{title}</b> </span>
     <div>
-    - &#36;{price}{quantity ? ` x ${quantity}` : null}
+    cost - &#36;{price}{quantity ? ` x ${quantity}` : null}
+    <p>
+      Written by {author}
+    </p>
     </div>
   </div>
 )
