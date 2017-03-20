@@ -6,7 +6,7 @@ import stylesheet from './stylesheets/global.scss';
 import { Nav, Navbar, NavItem, Button, Glyphicon } from 'react-bootstrap';
 import { store } from '../redux/store';
 import Router from 'next/router'
-console.log('asdfasdfsadf', store.getState().cart);
+
 export default ({ children, title = 'This is the default title', cartLength }) => (
   <div>
     <Head>
@@ -28,17 +28,19 @@ export default ({ children, title = 'This is the default title', cartLength }) =
       </Navbar.Header>
       <Nav>
         <NavItem eventKey={1} >
-          <span onClick={() => Router.push('/')}>
+          <span onClick={() => Router.push('/admin')}>
             Admin</span>
         </NavItem>
         <NavItem eventKey={2} >
           <span onClick={() => Router.push('/products')}>Products</span>
         </NavItem>
+        <NavItem eventKey={2} >
+          <span onClick={() => Router.push('/')}>Order History</span>
+        </NavItem>
       </Nav>
-      <Nav pullRight>
-
+      <Nav pullRight style={{display:(cartLength===undefined ? 'none' : '')}}>
         <NavItem eventKey={3} href="#">
-          <Button>
+          <Button >
             <Glyphicon glyph="shopping-cart" />
             <span onClick={() => Router.push('/cart')}>
               Cart {cartLength > 0 ? `(${cartLength})` : ''}

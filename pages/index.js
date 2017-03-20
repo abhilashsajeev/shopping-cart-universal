@@ -8,7 +8,7 @@ import { store } from '../redux/store';
 export default () => {
   return (
       <Layout title="home">
-        <h1 className="home-header">Welcome page</h1>
+        <h1 className="home-header">Order History</h1>
         
       </Layout>
     

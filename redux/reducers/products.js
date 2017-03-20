@@ -27,10 +27,11 @@ const byId = (state = {}, action) => {
       }
     case ADD_PRODUCT_TO_INVENTORY:
       const {product} = action;
-      
-      return{
+      product.id += Math.random(); 
+      console.log('adding product to inventory', product);
+      return {
         ...state,
-        [product.productId]: product
+        [product.id]: product
       }
     default:
       const { productId } = action
@@ -47,7 +48,14 @@ const byId = (state = {}, action) => {
 const visibleIds = (state = [], action) => {
   switch (action.type) {
     case RECEIVE_PRODUCTS:
-      return action.products.map(product => product.id)
+      return action.products.map(product => product.id);
+    case ADD_PRODUCT_TO_INVENTORY:
+    var {product} =  action
+    console.log('adding the visible id',product.id)
+    return [
+      ...state,
+      product.id
+    ]
     default:
       return state
   }
@@ -63,7 +71,6 @@ export const getProduct = (state, id) =>
 
 
 export const getVisibleProducts = (state) => {
-  console.log('the state is', state);
   return state.visibleIds.map(id => getProduct(state, id))
 }
 

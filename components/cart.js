@@ -9,6 +9,7 @@ const Cart = ({ products, total }) => {
         title={product.title}
         price={product.price}
         quantity={product.quantity}
+        author={product.author}
         key={product.id}
       />
     )

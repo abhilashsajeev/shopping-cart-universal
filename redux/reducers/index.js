@@ -3,6 +3,7 @@ import cart, * as fromCart from './cart'
 import products, * as fromProducts from './products'
 import orderHistory from './orderHistory';
 import inventory from './inventory';
+import {getInventoryDefaults} from './inventory';
 export default combineReducers({
   cart,
   products,
@@ -27,5 +28,7 @@ export const getCartProducts = state =>
     ...getProduct(state, id),
     quantity: getQuantity(state, id)
   }))
-  
-export const getInventoryDefaults = state => inventory.getInventoryDefaults;
+
+
+
+export const getDefaultBookValue = state => getInventoryDefaults(state);

@@ -7,6 +7,7 @@ const addProductToInventory = product => ({
 })
 
 export const addProduct = (product) => dispatch => {
+  console.log('product to the add', product)
   dispatch(addProductToInventory(product))
 }
 
@@ -14,6 +15,16 @@ const receiveProducts = products => ({
   type: types.RECEIVE_PRODUCTS,
   products: products
 })
+
+const updateInvoDataUnsafe = (field, value) => ({
+  type: types.UPDATE_INVO_DATA,
+  field,
+  value
+})
+
+export const updateInvodata = (field, name) => dispatch => {
+  dispatch(updateInvoDataUnsafe(field, name))
+}
 
 export const getAllProducts = () => dispatch => {
   shop.getProducts(products => {
